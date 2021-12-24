@@ -13,7 +13,7 @@
 
             <div class="flex justify-center overflow-visible mt-14">
                 {% for username in github_profiles %}
-                <img src="https://github.com/{{ username }}.png" alt="{{ username }} GitHub profile image" class="w-20 h-20 -ml-3 bg-white rounded-full shadow">
+                <a href="https://github.com/{{ username }}" class="w-20 h-20 -ml-3 overflow-hidden transition-transform transform bg-white rounded-full shadow hover:-translate-y-2"><img src="https://github.com/{{ username }}.png" alt="{{ username }} GitHub profile image"></a>
                 {% endfor %}
             </div>
 

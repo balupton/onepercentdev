@@ -7,6 +7,8 @@ variables:
   base_url:
     default: https://www.onepercent.dev
     from_env: URL
+  google_measurement_id:
+    from_env: GOOGLE_MEASUREMENT_ID
   github_profiles:
   - sdispater
   - eyeseast

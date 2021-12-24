@@ -1,0 +1,279 @@
+{% extends "base.template.html" %}
+
+{% set title = "Supporting open source financially" %}
+{% set description = "Contribute 1% of your revenue back to the open source projects and people that make it possible." %}
+
+{% block content %}
+
+<div class="container flex-grow max-w-4xl px-4 mx-auto">
+    <div class="relative flex items-center justify-center min-h-screen pt-14">
+        <div class="text-center">
+            <h1 class="font-mono text-5xl font-extrabold">1% for Open Source</h1>
+            <p class="mt-8 text-2xl">Contribute 1% of your revenue back to the open source<br class="hidden sm:inline"> projects and people that make it possible.</p>
+
+            <div class="flex justify-center overflow-visible mt-14">
+                {% for username in github_profiles %}
+                <img src="https://github.com/{{ username }}.png" alt="{{ username }} GitHub profile image" class="w-20 h-20 -ml-3 bg-white rounded-full shadow">
+                {% endfor %}
+            </div>
+
+            <div class="md:absolute md:left-0 md:flex md:w-full md:justify-center md:bottom-14">
+                <a href="#about" class="inline-block text-gray-500 mt-14"><span class="text-gray-500 underline hover:text-blue-700">Learn more</span><br>⌄</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="relative mt-16 text-gray-100 py-36">
+    <div class="absolute top-0 bottom-0 left-0 right-0 transform -skew-y-3 bg-d-brown-900"></div>
+    <div class="container relative z-10 flex-grow max-w-4xl px-4 mx-auto">
+        <div id="about" class="pt-8 text-xl sm:text-2xl">
+            <p>It's no secret that some open source projects are undervalued.</p>
+
+            <p class="mt-8">As revenue generating businesses, we should make a concerted effort to
+            support the people that are saving us time, energy, and money
+            by sharing their work.</p>
+
+            <p class="mt-8 font-semibold">It doesn't have to be hard &mdash; it just takes doing.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container flex-grow max-w-4xl px-4 mx-auto">
+    <div id="contribute" class="pt-8 mt-10 sm:mt-20">
+        <p class="text-3xl font-extrabold text-center">I get it. So what do we do?</p>
+
+        <div class="mx-auto max-w-prose">
+            <div class="px-8 pb-8 mt-16 border rounded">
+                <h3 class="flex justify-between mt-10 mb-6 text-2xl font-medium">
+                    1. Pick some projects
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 bi bi-bag-plus" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                    </svg>
+                </h3>
+                <p class="mt-4">
+                    At the end of the year, take a look at your dependencies.
+                    Think about how your business works.
+                </p>
+                <p class="mt-4">
+                    <span class="font-semibold">What open source projects do you rely on?</span>
+                    Which of those could use some financial support?
+                </p>
+                <p class="mt-4 text-sm text-gray-700">(Hint: Fortune 500 companies probably don't need your money.)</p>
+
+                <div class="grid gap-4 pb-5 mt-10 md:grid-cols-3">
+                    <a href="https://github.com/sponsors/community" class="flex flex-col items-center justify-end px-3 py-6 text-gray-600 bg-gray-100 rounded shadow hover:bg-gray-200">
+                        <img src="/assets/img/githubsponsors.png" alt="GitHub Sponsors logo" class="w-32 rounded shadow">
+                        <span class="mt-4">GitHub Sponsors →</span>
+                    </a>
+                    <a href="https://opencollective.com/discover" class="flex flex-col items-center justify-end px-3 py-6 text-gray-600 bg-gray-100 rounded shadow hover:bg-gray-200">
+                        <img src="/assets/img/opencollective.png" alt="Open Collective logo" class="w-32">
+                        <span class="mt-4">Open Collective →</span>
+                    </a>
+                    <a href="https://tidelift.com/" class="flex flex-col items-center justify-end px-3 py-6 text-gray-600 bg-gray-100 rounded shadow hover:bg-gray-200">
+                        <img src="/assets/img/tidelift.png" alt="Tidelift logo" class="w-32">
+                        <span class="mt-4">Tidelift →</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="px-8 pb-8 mt-6 border rounded">
+                <h3 class="flex justify-between mt-10 mb-6 text-2xl font-medium">
+                    2. Support them directly
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 bi bi-coin" viewBox="0 0 16 16">
+                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+                    </svg>
+                </h3>
+
+                <p class="mt-4">
+                    Use <a href="https://github.com/sponsors/community" class="text-blue-600 underline hover:text-blue-700">GitHub Sponsors</a>, <a href="https://opencollective.com/discover" class="text-blue-600 underline hover:text-blue-700">Open Collective</a>, or whatever method the project suggests for financial contributions.
+                    If they don't list anything, find an email address and reach out!
+                    It might be the push they need to set something up.
+                </p>
+                <p class="mt-4">
+                    <span class="font-semibold">Use 1% of your revenue as a guideline</span> &mdash; pick a number, divide it between the projects how you see fit, and click the button.
+                    It doesn't have to be 1% of total revenue (we aren't going to check).
+                    It could be more, it could be less.
+                    But something is better than nothing.
+                </p>
+
+                <p class="mt-4">Don't know where to start? Pick one person on GitHub Sponsors. Don't worry about the amount and just start the habit (you can do more next year).</p>
+            </div>
+
+            <div class="px-8 pb-8 mt-6 border rounded">
+                <h3 class="flex justify-between mt-10 mb-6 text-2xl font-medium">
+                    3. Tell us
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 bi bi-input-cursor-text" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.165 4.165 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.49 3.49 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.165 4.165 0 0 1-2.06-.566A4.561 4.561 0 0 1 8 13.65a4.561 4.561 0 0 1-.44.285 4.165 4.165 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.49 3.49 0 0 0-.436-.294A3.166 3.166 0 0 0 5.5 2.5.5.5 0 0 1 5 2z"/>
+                        <path d="M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4v1zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4z"/>
+                    </svg>
+                </h3>
+                <p class="mt-4">
+                    Did you do it?
+                    Awesome!
+                </p>
+                <p class="mt-4">
+                    Fill out this form with as much information as you're comfortable with.
+                    We'll create a page on this website just for you or your company.
+                    <a href="/p/dropseed/" class="text-blue-600 underline hover:text-blue-700">Here's an example.</a>
+                </p>
+
+                <form name="apply" method="POST" data-netlify="true" action="/submitted/">
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Contact information</h3>
+                        <p class="mt-1 text-sm text-gray-500">This will only be used for direct contact with you. It won't be displayed publicly.</p>
+                    </div>
+
+                    <label for="name" class="block mt-4 text-sm font-medium text-gray-700">Your name</label>
+                    <div class="mt-1">
+                        <input type="text" name="name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+
+                    <label for="email" class="block mt-4 text-sm font-medium text-gray-700">Your email</label>
+                    <div class="mt-1">
+                        <input type="email" name="email" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Company profile</h3>
+                        <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly on your onepercent.dev page.</p>
+                    </div>
+
+                    <label for="company" class="block mt-4 text-sm font-medium text-gray-700">Company name</label>
+                    <div class="mt-1">
+                        <input type="text" name="company" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+
+                    <label for="company_url" class="block mt-4 text-sm font-medium text-gray-700">Website URL</label>
+                    <div class="mt-1">
+                        <input type="url" name="company_url" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+
+                    <label for="company_github_url" class="block mt-4 text-sm font-medium text-gray-700">GitHub URL</label>
+                    <div class="mt-1">
+                        <input type="url" name="company_github_url" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+
+                    <label for="company_twitter_url" class="block mt-4 text-sm font-medium text-gray-700">Twitter URL</label>
+                    <div class="mt-1">
+                        <input type="url" name="company_twitter_url" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Open source projects</h3>
+                        <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly on your onepercent.dev page.</p>
+                    </div>
+
+                    <label for="support" class="block mt-4 text-sm font-medium text-gray-700">Who are you supporting?</label>
+                    <div class="mt-1">
+                        <textarea rows="10" name="support" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-500">
+                        Make a simple list of the people and projects you are supporting financially. Provide a link to a GitHub profile, and optionally a short explanation of *why* you're supporting them.
+                    </p>
+
+                    <hr class="mt-6">
+
+                    <button type="submit" class="block w-full px-3 py-3 my-6 text-center text-white bg-green-800 rounded shadow">Submit</button>
+                    <p class="mt-1 text-sm italic text-gray-500">
+                        By submitting this form, you are giving us permission to use your name and logo and share your support!
+                    </p>
+                </form>
+            </div>
+
+            <div class="px-8 pb-8 mt-6 border rounded">
+                <h3 class="flex justify-between mt-10 mb-6 text-2xl font-medium">
+                    4. Tell everyone else
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-8 h-8 bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                    </svg>
+                </h3>
+                <p class="mt-4">
+                    Tweet about your <a href="https://onepercent.dev/" class="text-blue-600 underline hover:text-blue-700">onepercent.dev</a> page!
+                    Or tweet about this page!
+                    Personal account, company account, do it all.
+                    It's ok to toot your own horn &mdash; it could convince others to do the same.
+                </p>
+                <p class="mt-4">Not making contributions today? Tweet about this website anyway &mdash; maybe someone else will.</p>
+
+                <div class="grid gap-2 md:grid-cols-2">
+                    {% for tweet in tweets %}
+                    <blockquote class="twitter-tweet">
+                        <a href="{{ tweet }}"></a>
+                    </blockquote>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-32 mt-32 border-t border-gray-100 bg-d-brown-100">
+    <div class="container max-w-4xl px-4 mx-auto">
+        <div id="faqs">
+            <h2 class="text-3xl font-extrabold text-center">FAQs</h2>
+
+            <div class="mx-auto max-w-prose">
+                <h3 class="mt-10 text-xl font-semibold">What exactly is <a href="https://onepercent.dev" class="text-blue-600 underline hover:text-blue-700">onepercent.dev</a>?</h3>
+                <p class="mt-4">For now, it's a framework for giving back to open source and a collection of businesses who are doing it.
+                    It's not a fund or a nonprofit, and we don't process any transactions.
+                    Let's call it a movement?!
+                    It's definitely a website.
+                </p>
+
+                <h3 class="mt-10 text-xl font-semibold">Why would I want to join?</h3>
+                <p class="mt-4">
+                    Awareness!
+                    You can obviously contribute to open source (financially or otherwise) on your own terms and with no connection to this project.
+                    But sometimes it helps to have a framework to get you over the hurdle,
+                    and some incentive to share your behavior.
+                    Fill out our form and you'll get a full page on this site (with links back to yours),
+                    and a 1% badge you can use and Tweet.
+                    Sharing is caring... and helping.
+                </p>
+
+                <h3 class="mt-10 text-xl font-semibold">Is this like <a href="#" class="text-blue-600 underline hover:text-blue-700">1% for the Planet</a>?</h3>
+                <p class="mt-4">
+                    The 1% part, yes.
+                    Otherwise there's no connection.
+                    We just think that the "1%" way of thinking is simple and powerful,
+                    and could work here just like it does for them and others who use it.
+                </p>
+
+                <h3 class="mt-10 text-xl font-semibold">Who's behind this?</h3>
+                <p class="mt-4">
+                    <a href="https://onepercent.dev" class="text-blue-600 underline hover:text-blue-700">Onepercent.dev</a> was started by me, <a href="https://twitter.com/davegaeddert" class="text-blue-600 underline hover:text-blue-700">Dave Gaeddert</a> (and my business <a href="https://www.dropseed.dev/" class="text-blue-600 underline hover:text-blue-700">Dropseed</a>).
+                    I have no authority to do such a thing,
+                    and I'm not sure it matters.
+                    If you want to partner on this project, let me know!
+                </p>
+
+                <h3 class="mt-10 text-xl font-semibold">What about taxes?</h3>
+                <p class="mt-4">
+                    No tax guidance here.
+                    Do your own research and see if there are ways you can make tax-deductible contributions,
+                    if you're into that kind of thing.
+                </p>
+                <p class="mt-2">Here's a short list of 501(c)3 organizations:</p>
+                <ul class="pl-6 mt-1 list-disc">
+                    <li><a class="text-blue-600 underline hover:text-blue-700" href="https://www.apache.org/foundation/contributing.html">Apache Software Foundation</a></li>
+                    <li><a class="text-blue-600 underline hover:text-blue-700" href="https://donate.mozilla.org/">Mozilla Foundation</a></li>
+                    <li><a class="text-blue-600 underline hover:text-blue-700" href="https://opensource.org/civicrm/contribute/transact?reset=1&id=2">Open Source Initiative (OSI)</a></li>
+                    <li><a class="text-blue-600 underline hover:text-blue-700" href="https://www.python.org/psf/">Python Software Foundation</a></li>
+                    <li><a class="text-blue-600 underline hover:text-blue-700" href="https://www.djangoproject.com/foundation/">Django Software Foundation</a></li>
+                    <li><a class="text-blue-600 underline hover:text-blue-700" href="http://www.rubycentral.org/">Ruby Central</a></li>
+                </ul>
+
+                <h3 class="mt-10 text-xl font-semibold">Will this solve everything?</h3>
+                <p class="mt-4">
+                    Of course not. But if we can get more money flowing, more solutions will come.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

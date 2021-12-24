@@ -1,0 +1,2 @@
+#!/bin/sh -e
+.venv/bin/combine work --port 8020

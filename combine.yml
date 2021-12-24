@@ -1,0 +1,37 @@
+steps:
+  - run: "npm run tailwind"
+    watch:
+      - "./content/assets/css/*"
+      - "./tailwind.config.js"
+variables:
+  base_url:
+    default: https://www.onepercent.dev
+    from_env: URL
+  github_profiles:
+  - sdispater
+  - eyeseast
+  - facelessuser
+  - openssl
+  - tpope
+  - zkat
+  - tj
+  - curl
+  - wifelette
+  - babel
+  - gregberge
+  - urllib3
+  - davidhalter
+  - python
+  - feross
+  - gr2m
+  - dominikh
+  - epoberezkin
+  - homebrew
+  - sindresorhus
+  - ljharb
+  - ahmadnassri
+  - mhart
+  - isaacs
+  tweets:
+  - https://twitter.com/Interior/status/463440424141459456
+  - https://twitter.com/Interior/status/463440424141459456

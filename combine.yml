@@ -30,6 +30,7 @@ variables:
   - epoberezkin
   - homebrew
   - sindresorhus
+  - django
   - ljharb
   - ahmadnassri
   - mhart

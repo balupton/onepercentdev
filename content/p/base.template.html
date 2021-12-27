@@ -31,9 +31,9 @@ See who {{ partner.name }} is supporting with their 1% financial contributions t
 
 {% block content %}
 <div class="container flex-grow max-w-4xl px-4 mx-auto">
-    <div class="flex mt-16">
-        <img src="https://github.com/{{ partner.github }}.png" alt="" class="mx-auto bg-white rounded-full shadow w-36">
-        <div class="flex-grow mt-4 ml-8">
+    <div class="flex flex-col sm:mt-16 sm:flex-row">
+        <img src="https://github.com/{{ partner.github }}.png" alt="" class="bg-white rounded-full shadow sm:mx-auto w-36">
+        <div class="flex-grow mt-4 sm:ml-8">
             <h1 class="text-4xl font-semibold">{{ partner.name }}</h1>
             <div class="flex items-center mt-3 space-x-4">
                 <a href="{{ partner.url }}" class="text-d-brown-500 hover:text-d-brown-300">
@@ -58,16 +58,16 @@ See who {{ partner.name }} is supporting with their 1% financial contributions t
         </div>
     </div>
 
-    <h2 class="mt-20 text-2xl font-semibold">Currently supporting <span class="font-normal text-gray-400">&bull; 2021</span></h2>
-    <div class="grid gap-4 mt-8 md:grid-cols-3">
+    <h2 class="mt-10 text-2xl font-semibold sm:mt-20">Currently supporting <span class="font-normal text-gray-400">&bull; 2021</span></h2>
+    <div class="grid gap-4 mt-4 sm:mt-8 sm:grid-cols-2 md:grid-cols-3">
         {% for s in partner.supporting %}
             {% include "p/supporting.template.html" %}
         {% endfor %}
     </div>
 
     {% if partner.past_supporting %}
-    <h2 class="mt-20 text-2xl font-semibold">Supported in the past</h2>
-    <div class="grid gap-4 mt-8 md:grid-cols-3">
+    <h2 class="mt-10 text-2xl font-semibold sm:mt-20">Supported in the past</h2>
+    <div class="grid gap-4 mt-4 sm:mt-8 sm:grid-cols-2 md:grid-cols-3">
         {% for s in partner.past_supporting %}
             {% include "p/supporting.template.html" %}
         {% endfor %}

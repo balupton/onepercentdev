@@ -5,15 +5,15 @@
 
 {% block content %}
 
-<div class="container flex-grow max-w-4xl px-4 mx-auto">
+<div class="container flex-grow max-w-4xl mx-auto">
     <div class="relative flex items-center justify-center min-h-screen pt-14">
-        <div class="text-center">
-            <h1 class="font-mono text-5xl font-extrabold">1% for Open Source</h1>
-            <p class="mt-8 text-2xl">Contribute 1% of your revenue back to the open source<br class="hidden sm:inline"> projects and people that make it possible.</p>
+        <div class="overflow-x-auto text-center sm:overflow-x-visible">
+            <h1 class="px-6 font-mono text-5xl font-extrabold">1% for Open Source</h1>
+            <p class="px-6 mt-8 text-2xl">Contribute 1% of your revenue back to the open source<br class="hidden sm:inline"> projects and people that make it possible.</p>
 
-            <div class="flex justify-center overflow-visible mt-14">
+            <div class="flex justify-center overflow-x-hidden sm:overflow-x-visible mt-14">
                 {% for username in github_profiles %}
-                <a href="https://github.com/{{ username }}" class="w-20 h-20 -ml-3 overflow-hidden transition-transform transform bg-white rounded-full shadow hover:-translate-y-2"><img src="https://github.com/{{ username }}.png" alt="{{ username }} GitHub profile image"></a>
+                <a href="https://github.com/{{ username }}" class="flex-shrink-0 w-20 h-20 -ml-3 overflow-hidden transition-transform transform bg-white rounded-full shadow hover:-translate-y-2"><img src="https://github.com/{{ username }}.png" alt="{{ username }} GitHub profile image"></a>
                 {% endfor %}
             </div>
 

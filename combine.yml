@@ -35,6 +35,6 @@ variables:
   - ahmadnassri
   - mhart
   - isaacs
-  tweets:
-  - https://twitter.com/Interior/status/463440424141459456
-  - https://twitter.com/Interior/status/463440424141459456
+  tweets: []
+  # - https://twitter.com/Interior/status/463440424141459456
+  # - https://twitter.com/Interior/status/463440424141459456

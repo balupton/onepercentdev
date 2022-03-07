@@ -3,7 +3,7 @@
         "tailwind": "./node_modules/.bin/tailwind build -i ./content/assets/css/_main.css -c ./tailwind.config.js -o ./output/assets/css/main.css"
     },
     "dependencies": {
-        "@tailwindcss/forms": "^0.4.0",
+        "@tailwindcss/forms": "^0.5.0",
         "autoprefixer": "^10.2.1",
         "tailwindcss": "^3.0.7"
     }
